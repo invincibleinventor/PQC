@@ -6,7 +6,7 @@
 >
 > **How to read it:** go in order. Each part builds on the one before. If a part feels heavy, read its **"In one line"** summary and move on. You can come back later.
 >
-> **Where this ends:** by the last part you'll understand what our proposed IEEE paper ("HedgeKEM") is about, why it matters, why it's new, and exactly what experiments we plan to run on an M4 Max laptop.
+> **Where this ends:** by the last part you'll understand what our proposed IEEE paper ("HedgeKEM") is about, why it matters, why it's new, and exactly what experiments we plan to run. None of them needs special hardware.
 
 ---
 
@@ -35,7 +35,7 @@
 - [Part 20 — Why HedgeKEM Works: The Guarantees](#part-20--why-hedgekem-works-the-guarantees)
 - [Part 21 — What HedgeKEM Can't Do (Being Honest)](#part-21--what-hedgekem-cant-do-being-honest)
 - [Part 22 — Is This Really New? (Related Work)](#part-22--is-this-really-new-related-work)
-- [Part 23 — The Research Plan: Experiments on an M4 Max](#part-23--the-research-plan-experiments-on-an-m4-max)
+- [Part 23 — The Research Plan: Experiments](#part-23--the-research-plan-experiments)
 - [Part 24 — What the Paper Will Look Like](#part-24--what-the-paper-will-look-like)
 - [Part 25 — Risks and How We Handle Them](#part-25--risks-and-how-we-handle-them)
 - [Part 26 — Recap: The Whole Journey on One Page](#part-26--recap-the-whole-journey-on-one-page)
@@ -737,14 +737,14 @@ Eve **never touches Bob's secret key**, and she **never solves any lattice probl
 
 Fast ML-KEM-768 code does one encapsulation in roughly **10–30 microseconds** on a modern CPU (we'll measure the exact number). Using 20 µs:
 
-| Entropy in m | Guesses needed (worst case) | 1 CPU core | 14 cores (like an M4 Max) |
+| Entropy in m | Guesses needed (worst case) | 1 CPU core | 14 cores (one ordinary high-end computer) |
 |---|---|---|---|
 | 20 bits | ~1 million | ~21 seconds | ~1.5 seconds |
 | 32 bits | ~4.3 billion | ~24 hours | **~1.7 hours** |
 | 40 bits | ~1.1 trillion | ~255 days | ~18 days (a small cloud cluster: hours) |
 | 256 bits (proper) | 2²⁵⁶ | longer than the universe will exist | still impossible |
 
-So a weak RNG with **32 bits** of entropy means **one laptop recovers the key over lunch.** Once Eve has `K`, she decrypts the whole session.
+So a weak RNG with **32 bits** of entropy means **one ordinary computer recovers the key over lunch.** The attacker needs no supercomputer, no GPU farm, and no quantum computer. That cheapness is the point. Once Eve has `K`, she decrypts the whole session.
 
 > 💡 **Is this "breaking ML-KEM"?** No, and we must say so clearly in the paper. ML-KEM's math is fine. The point is: **ML-KEM gives zero protection once the coin is guessable, and no deployed implementation adds any.** It inherits 100% of the weakness of whatever RNG is underneath.
 
@@ -1049,23 +1049,34 @@ We searched the research literature (October 2026) to check that the idea hasn't
 
 ---
 
-## Part 23 — The Research Plan: Experiments on an M4 Max
+## Part 23 — The Research Plan: Experiments
 
-**In one line:** everything runs on one laptop: C code, a Linux virtual machine, and some Python scripts.
+**In one line:** the research is about ML-KEM, random generators, and cloud snapshot platforms, not about any particular computer. All experiments run on ordinary commodity hardware.
+
+> **Hardware principle.** The subject of the paper is the *software and deployment* behavior: crypto libraries, operating systems, hypervisors, and serverless platforms. The machine we run on is only the **testbed**, and the paper treats it that way:
+> - Results are reported in **hardware-neutral units**: encapsulations per core-second, and "core-hours" or approximate cloud cost to break a coin of a given entropy. Anyone can then scale them to their own machine or a rented cluster.
+> - Everything is **cross-platform**: the attack and the HedgeKEM code are portable C/Python, built for both **x86-64** and **ARM64**.
+> - The snapshot study targets the platforms that matter in the real world (**Linux KVM/QEMU, Firecracker/AWS Lambda**), not desktop hardware.
+> - The testbed (the most powerful machine available to us is an Apple M4 Max laptop) is named once, in the "Experimental setup" paragraph, like any paper lists its test machine. It is not a contribution.
+> - Low compute is actually a **feature of the story**: if a single affordable computer can recover a weak coin, the threat is real for every attacker.
 
 ### 23.1 Experiment 1: "How fast can a weak coin be cracked?"
 
 - **What:** implement the brute-force attack from Part 15 against ML-KEM-768 (and the X25519MLKEM768 hybrid).
-- **How:** use a fast open-source ML-KEM library (for example **mlkem-native** or **liboqs**, which use the M4's NEON vector instructions) through its "encapsulate with given `m`" function. Simulate RNGs with 20, 24, 28, 32, 36, and 40 bits of entropy. Parallelize across all CPU cores.
-- **Measure:** guesses per second; time to recovery at each entropy level.
+- **How:** use a fast open-source ML-KEM library (for example **mlkem-native** or **liboqs**, which have optimized code for both x86-64 and ARM64) through its "encapsulate with given `m`" function. Simulate RNGs with 20, 24, 28, 32, 36, and 40 bits of entropy. Parallelize across all CPU cores. If available, also run on a second, different machine (for example a college lab x86 PC or a free-tier cloud VM) to show the numbers carry over.
+- **Measure:** guesses per core-second (hardware-neutral); time to recovery at each entropy level; extrapolated cost on rented cloud CPUs. Full 2³⁶–2⁴⁰ searches don't need to be completed: measure the rate on a sample and extrapolate, which is the standard method.
 - **Output:** **Figure 1**, a line chart of "Entropy bits vs. time to recover the key" (log scale), with markers like "1 minute," "1 hour," "1 day."
 
 ### 23.2 Experiment 2: "Do real libraries repeat the coin after a snapshot?"
 
 - **What:** run a tiny program that does ML-KEM encapsulation inside a **Linux VM**, snapshot it after the crypto library has initialized, restore it several times, and record each clone's `m`, `K`, and `c`.
 - **Which libraries:** OpenSSL 3.5, AWS-LC, BoringSSL, Go's `crypto/mlkem`, liboqs, and RustCrypto `ml-kem`.
-- **Which VM tools:** UTM/QEMU on macOS and Apple's Virtualization framework (through a tool like Tart). Optionally, an AWS Lambda SnapStart free-tier test.
-- **Also check:** does the guest Linux kernel see a vmgenid event after restore? (We couldn't find documentation saying whether Apple's framework provides it. Finding out is itself a result.)
+- **Which platforms:** the ones real deployments use:
+  - **QEMU/KVM** on Linux (the basis of most clouds), with and without the vmgenid device turned on. This gives a clean "with protection vs. without" comparison.
+  - **Firecracker** microVMs (the technology behind AWS Lambda), where KVM is available.
+  - **AWS Lambda SnapStart** on the free tier, as a real-world check.
+  - Desktop hypervisors (QEMU/UTM, Apple's Virtualization framework) as extra data points only.
+- **Also check:** does the guest Linux kernel see a vmgenid event after restore on each platform? (For example, we couldn't find documentation saying whether Apple's framework provides it. Finding out is a small side result.)
 - **Output:** **Table**, "Library × Platform → coin repeated? (Yes / No / Sometimes)." Any outcome is publishable: "all safe" is reassuring evidence, and "some repeat" is an important finding.
 
 > ⚖️ **Ethics:** if we find a real vulnerability in a library, we report it privately to its maintainers first (**responsible disclosure**) and give them time to fix it before publishing. This is standard practice and makes the paper stronger.
@@ -1089,10 +1100,10 @@ We searched the research literature (October 2026) to check that the idea hasn't
 | Need | Tool | Cost |
 |---|---|---|
 | ML-KEM implementations | mlkem-native, liboqs, OpenSSL 3.5, Go, AWS-LC, BoringSSL, RustCrypto | free / open source |
-| Virtual machines | UTM / QEMU, Apple Virtualization framework (Tart) | free |
+| Virtual machines | QEMU/KVM, Firecracker (Linux); UTM / Apple Virtualization framework as extra data points | free |
 | Analysis and plots | Python (numpy, matplotlib) | free |
 | Randomness tests | NIST SP 800-22 test suite | free |
-| Hardware | the M4 Max laptop | already have |
+| Hardware | any modern multi-core computer (our testbed: an M4 Max laptop; a college lab PC or free-tier cloud VM as a second machine) | already available |
 | Optional cloud | AWS free tier (Lambda SnapStart) | free tier |
 
 No GPU cluster, no quantum computer, no special hardware.
@@ -1142,6 +1153,7 @@ IEEE conference papers are usually **6–8 pages, two-column**. A planned outlin
 | Proof only in the classical random-oracle model | "What about quantum attackers on the hash?" | State it clearly as a limitation; cite standard quantum random-oracle techniques; mark it as future work. |
 | "This doesn't break ML-KEM" | "Overclaiming." | We never claim ML-KEM is broken. We say ML-KEM *inherits* RNG failures and that no deployed implementation hedges against them. |
 | Ethics / disclosure | — | Responsible disclosure before submission. |
+| "Results only hold on your machine" | "Your attack timings are specific to one laptop." | Report hardware-neutral rates (per core-second, cloud cost), use cross-platform code, and confirm on a second machine. The security claims (the proof, interop, and snapshot behavior) don't depend on hardware at all. |
 
 ---
 
@@ -1157,7 +1169,7 @@ IEEE conference papers are usually **6–8 pages, two-column**. A planned outlin
 8. **Randomness fails in practice**: low entropy at boot, bugs, backdoors, and **cloned VMs and serverless snapshots**. History is full of such disasters.
 9. **Weak coin** → brute force on a laptop → shared secret recovered. **Cloned coin** to the same recipient → same AES-GCM key and nonce → messages read **and** forged. The **hybrid** doesn't help, because both halves share the RNG.
 10. **HedgeKEM:** `m = SHAKE256(label ‖ RNG ‖ H(ek) ‖ ctx ‖ hedge_key ‖ H(plaintext))`. Unpredictable if *RNG good OR hedge_key secret*; unique if *RNG good OR inputs differ*. **The receiver is unchanged**, so it works with every ML-KEM implementation today. The cost is about one extra hash.
-11. **The paper:** taxonomy + attack experiments + snapshot study + HedgeKEM + proof sketch + interop and speed evaluation. All of it fits on an **M4 Max in about 8–10 weeks**.
+11. **The paper:** taxonomy + attack experiments + snapshot study + HedgeKEM + proof sketch + interop and speed evaluation. All of it runs on **ordinary commodity hardware in about 8–10 weeks**. The computer is just the testbed, not part of the contribution.
 
 ---
 
