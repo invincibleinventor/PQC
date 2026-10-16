@@ -1,0 +1,239 @@
+N512 Q=0.001: 1-D throughput-optimal block 128 r=0.800 rounds=1.05 -> gain over Cascade 6.01x
+N512 Q=0.001: casc r=0.828+-0.000 rounds=6.53 succ=1.000 | 1d r=0.818+-0.002 rounds=1.48 fb=0.05 C=256 | ldpc r=0.750 f=6.0 succ=0.946
+N512 Q=0.002: 1-D throughput-optimal block 32 r=0.661 rounds=1.19 -> gain over Cascade 5.56x
+N512 Q=0.002: casc r=0.807+-0.003 rounds=8.09 succ=0.993 | 1d r=0.782+-0.004 rounds=2.84 fb=0.17 C=256 | ldpc r=0.723 f=5.0 succ=0.965
+N512 Q=0.005: 1-D throughput-optimal block 32 r=0.604 rounds=2.56 -> gain over Cascade 3.07x
+N512 Q=0.005: casc r=0.744+-0.001 rounds=9.70 succ=0.999 | 1d r=0.647+-0.007 rounds=4.18 fb=0.28 C=64 | ldpc r=0.634 f=4.0 succ=0.982
+N512 Q=0.01: 1-D throughput-optimal block 16 r=0.412 rounds=4.49 -> gain over Cascade 1.69x
+N512 Q=0.01: casc r=0.675+-0.003 rounds=12.41 succ=0.989 | 1d r=0.456+-0.010 rounds=14.89 fb=0.84 C=128 | ldpc r=0.543 f=2.5 succ=0.919
+N512 Q=0.02: 1-D throughput-optimal block 16 r=0.245 rounds=12.01 -> gain over Cascade 0.71x
+N512 Q=0.02: casc r=0.551+-0.004 rounds=19.27 succ=0.972 | 1d r=0.378+-0.004 rounds=24.43 fb=1.00 C=256 | ldpc r=0.422 f=2.0 succ=0.937
+matched N=65536 Q=0.001: casc r=0.974+-0.000 rho=33.28 k1=365 | 1d r=0.800 rho=4.45 [1, 32] | 2d r=0.919+-0.000 rho=1.00 [256, 256] succ=1.000 fb=0.000 f=6.06 it=1.34 | ldpc r=0.954+-0.000 f=3.0 succ=1.000 it=7.2 | 2d/ldpc=0.963 thr(2d)/thr(casc)=31.4
+matched N=65536 Q=0.002: casc r=0.953+-0.000 rho=33.28 k1=182 | 1d r=0.478 rho=5.38 [1, 8] | 2d r=0.910+-0.000 rho=1.00 [256, 256] succ=1.000 fb=0.005 f=3.32 it=2.74 | ldpc r=0.927+-0.000 f=2.5 succ=1.000 it=8.0 | 2d/ldpc=0.982 thr(2d)/thr(casc)=31.6
+matched N=65536 Q=0.005: casc r=0.896+-0.000 rho=33.83 k1=73 | 1d r=0.444 rho=23.20 [1, 8] | 2d r=0.813+-0.000 rho=1.12 [64, 256] succ=1.000 fb=0.122 f=3.12 it=3.94 | ldpc r=0.863+-0.000 f=2.0 succ=1.000 it=12.1 | 2d/ldpc=0.941 thr(2d)/thr(casc)=27.3
+matched N=65536 Q=0.01: casc r=0.812+-0.001 rho=30.82 k1=36 | 1d r=0.681 rho=64.77 [1, 1024] | 2d r=0.642+-0.000 rho=1.09 [32, 64] succ=1.000 fb=0.033 f=3.42 it=1.63 | ldpc r=0.757+-0.000 f=2.0 succ=1.000 it=8.4 | 2d/ldpc=0.848 thr(2d)/thr(casc)=22.4
+matched N=65536 Q=0.02: casc r=0.664+-0.001 rho=28.06 k1=18 | 1d r=0.550 rho=64.23 [1, 1024] | 2d r=0.331+-0.000 rho=1.21 [16, 16] succ=1.000 fb=0.018 f=3.73 it=1.07 | ldpc r=0.632+-0.000 f=1.6 succ=1.000 it=12.9 | 2d/ldpc=0.523 thr(2d)/thr(casc)=11.5
+matched N=16384 Q=0.001: casc r=0.973+-0.000 rho=25.42 k1=365 | 1d r=0.674 rho=1.65 [1, 16] | 2d r=0.866+-0.000 rho=1.00 [128, 128] succ=1.000 fb=0.000 f=10.62 it=1.01 | ldpc r=0.932+-0.018 f=4.0 succ=0.990 it=4.2 | 2d/ldpc=0.929 thr(2d)/thr(casc)=22.6
+matched N=16384 Q=0.002: casc r=0.951+-0.001 rho=28.04 k1=182 | 1d r=0.477 rho=2.32 [1, 8] | 2d r=0.857+-0.000 rho=1.00 [128, 128] succ=1.000 fb=0.000 f=5.82 it=1.18 | ldpc r=0.915+-0.000 f=3.0 succ=1.000 it=5.6 | 2d/ldpc=0.936 thr(2d)/thr(casc)=25.2
+matched N=16384 Q=0.005: casc r=0.894+-0.001 rho=28.32 k1=73 | 1d r=0.450 rho=6.95 [1, 8] | 2d r=0.832+-0.000 rho=1.02 [128, 128] succ=1.000 fb=0.018 f=2.68 it=3.46 | ldpc r=0.836+-0.029 f=2.0 succ=0.970 it=14.6 | 2d/ldpc=0.994 thr(2d)/thr(casc)=25.9
+matched N=16384 Q=0.01: casc r=0.810+-0.001 rho=25.60 k1=36 | 1d r=0.393 rho=23.49 [1, 8] | 2d r=0.678+-0.001 rho=1.35 [32, 128] succ=1.000 fb=0.070 f=2.97 it=3.21 | ldpc r=0.756+-0.000 f=2.0 succ=1.000 it=8.1 | 2d/ldpc=0.897 thr(2d)/thr(casc)=15.9
+matched N=16384 Q=0.02: casc r=0.663+-0.001 rho=24.02 k1=18 | 1d r=0.550 rho=54.02 [1, 1024] | 2d r=0.415+-0.000 rho=1.08 [16, 32] succ=1.000 fb=0.033 f=3.12 it=1.39 | ldpc r=0.624+-0.012 f=1.6 succ=0.990 it=14.2 | 2d/ldpc=0.665 thr(2d)/thr(casc)=13.9
+ablation r-span Q=0.002 256x256: 0.0002
+ablation Q=0.002 256x256: st0 b0 r=0.910 rho=1.76 fb=0.037; st2 b0 r=0.910 rho=1.15 fb=0.003; st0 b16 r=0.909 rho=1.03 fb=0.030; st2 b16 r=0.910 rho=1.00 fb=0.000
+ablation r-span Q=0.005 64x128: 0.0005
+ablation Q=0.005 64x128: st0 b0 r=0.789 rho=4.38 fb=0.207; st2 b0 r=0.789 rho=1.21 fb=0.007; st0 b16 r=0.789 rho=1.19 fb=0.190; st2 b16 r=0.789 rho=1.00 fb=0.003
+ablation r-span Q=0.005 128x128: 0.0010
+ablation Q=0.005 128x128: st0 b0 r=0.832 rho=11.52 fb=0.407; st2 b0 r=0.833 rho=4.05 fb=0.090; st0 b16 r=0.832 rho=1.38 fb=0.380; st2 b16 r=0.833 rho=1.24 fb=0.070
+ablation r-span Q=0.01 32x64: 0.0022
+ablation Q=0.01 32x64: st0 b0 r=0.640 rho=11.12 fb=0.577; st2 b0 r=0.642 rho=2.15 fb=0.043; st0 b16 r=0.642 rho=1.53 fb=0.473; st2 b16 r=0.642 rho=1.11 fb=0.037
+ablation r-span Q=0.01 64x64: 0.0032
+ablation Q=0.01 64x64: st0 b0 r=0.707 rho=26.27 fb=0.823; st2 b0 r=0.709 rho=10.67 fb=0.267; st0 b16 r=0.709 rho=1.85 fb=0.790; st2 b16 r=0.710 rho=2.09 fb=0.260
+burst Q=0.002 L=1 tile 256x256: row-major r=0.910 rho=1.00 fb=0.000 | interleaved r=0.910 rho=1.01 fb=0.007
+burst Q=0.002 L=8 tile 256x256: row-major r=0.880 rho=4.25 fb=0.927 | interleaved r=0.910 rho=1.00 fb=0.000
+burst Q=0.002 L=32 tile 256x256: row-major r=0.877 rho=4.77 fb=0.887 | interleaved r=0.908 rho=1.05 fb=0.053
+burst Q=0.002 L=128 tile 256x256: row-major r=0.882 rho=6.47 fb=0.667 | interleaved r=0.900 rho=1.14 fb=0.140
+burst Q=0.005 L=1 tile 64x256: row-major r=0.812 rho=1.77 fb=0.160 | interleaved r=0.812 rho=1.12 fb=0.120
+burst Q=0.005 L=8 tile 64x256: row-major r=0.786 rho=3.21 fb=0.993 | interleaved r=0.812 rho=1.12 fb=0.120
+burst Q=0.005 L=32 tile 64x256: row-major r=0.782 rho=4.29 fb=0.980 | interleaved r=0.810 rho=1.19 fb=0.187
+burst Q=0.005 L=128 tile 64x256: row-major r=0.786 rho=26.84 fb=0.960 | interleaved r=0.799 rho=1.44 fb=0.353
+bb84 e=0.0 p=0.0 sim=0.0000 theory=0.0000
+bb84 e=0.02 p=0.0 sim=0.0198 theory=0.0200
+bb84 e=0.04 p=0.3 sim=0.1100 theory=0.1090
+bb84 e=0.08 p=0.5 sim=0.1843 theory=0.1850
+bb84 e=0.0 p=1.0 sim=0.2498 theory=0.2500
+closed-loop oracle r=0.8207 rho=1.165
+closed-loop syndrome r=0.8212 rho=1.222
+closed-loop fixed r=0.8044 rho=14.830
+closed-loop sample r=0.7279 rho=1.183
+estimator Q=0.001 W=16384 syndrome_1d relRMSE=0.2440 bias=0.0177 p0=0.000
+estimator Q=0.001 W=16384 syndrome_2d relRMSE=0.2441 bias=0.0203 p0=0.000
+estimator Q=0.001 W=16384 sample relRMSE=0.6730 bias=-0.0112 p0=0.128
+estimator Q=0.001 W=65536 syndrome_1d relRMSE=0.1324 bias=0.0109 p0=0.000
+estimator Q=0.001 W=65536 syndrome_2d relRMSE=0.1288 bias=0.0110 p0=0.000
+estimator Q=0.001 W=65536 sample relRMSE=0.3246 bias=-0.0253 p0=0.000
+estimator Q=0.001 W=262144 syndrome_1d relRMSE=0.0605 bias=-0.0018 p0=0.000
+estimator Q=0.001 W=262144 syndrome_2d relRMSE=0.0601 bias=-0.0014 p0=0.000
+estimator Q=0.001 W=262144 sample relRMSE=0.1734 bias=-0.0140 p0=0.000
+estimator Q=0.001 W=1048576 syndrome_1d relRMSE=0.0303 bias=0.0004 p0=0.000
+estimator Q=0.001 W=1048576 syndrome_2d relRMSE=0.0299 bias=-0.0002 p0=0.000
+estimator Q=0.001 W=1048576 sample relRMSE=0.0877 bias=0.0056 p0=0.000
+estimator Q=0.002 W=16384 syndrome_1d relRMSE=0.1857 bias=0.0108 p0=0.000
+estimator Q=0.002 W=16384 syndrome_2d relRMSE=0.1793 bias=0.0139 p0=0.000
+estimator Q=0.002 W=16384 sample relRMSE=0.4969 bias=0.0199 p0=0.018
+estimator Q=0.002 W=65536 syndrome_1d relRMSE=0.0889 bias=-0.0052 p0=0.000
+estimator Q=0.002 W=65536 syndrome_2d relRMSE=0.0872 bias=-0.0057 p0=0.000
+estimator Q=0.002 W=65536 sample relRMSE=0.2491 bias=-0.0085 p0=0.000
+estimator Q=0.002 W=262144 syndrome_1d relRMSE=0.0496 bias=-0.0020 p0=0.000
+estimator Q=0.002 W=262144 syndrome_2d relRMSE=0.0472 bias=-0.0016 p0=0.000
+estimator Q=0.002 W=262144 sample relRMSE=0.1258 bias=0.0094 p0=0.000
+estimator Q=0.002 W=1048576 syndrome_1d relRMSE=0.0223 bias=0.0005 p0=0.000
+estimator Q=0.002 W=1048576 syndrome_2d relRMSE=0.0217 bias=0.0003 p0=0.000
+estimator Q=0.002 W=1048576 sample relRMSE=0.0589 bias=-0.0053 p0=0.000
+estimator Q=0.005 W=16384 syndrome_1d relRMSE=0.1282 bias=0.0046 p0=0.000
+estimator Q=0.005 W=16384 syndrome_2d relRMSE=0.1179 bias=0.0057 p0=0.000
+estimator Q=0.005 W=16384 sample relRMSE=0.2977 bias=0.0029 p0=0.000
+estimator Q=0.005 W=65536 syndrome_1d relRMSE=0.0678 bias=0.0035 p0=0.000
+estimator Q=0.005 W=65536 syndrome_2d relRMSE=0.0628 bias=0.0019 p0=0.000
+estimator Q=0.005 W=65536 sample relRMSE=0.1595 bias=-0.0060 p0=0.000
+estimator Q=0.005 W=262144 syndrome_1d relRMSE=0.0333 bias=0.0014 p0=0.000
+estimator Q=0.005 W=262144 syndrome_2d relRMSE=0.0308 bias=0.0012 p0=0.000
+estimator Q=0.005 W=262144 sample relRMSE=0.0791 bias=0.0026 p0=0.000
+estimator Q=0.005 W=1048576 syndrome_1d relRMSE=0.0168 bias=-0.0005 p0=0.000
+estimator Q=0.005 W=1048576 syndrome_2d relRMSE=0.0155 bias=-0.0000 p0=0.000
+estimator Q=0.005 W=1048576 sample relRMSE=0.0384 bias=0.0039 p0=0.000
+estimator Q=0.01 W=16384 syndrome_1d relRMSE=0.1101 bias=0.0090 p0=0.000
+estimator Q=0.01 W=16384 syndrome_2d relRMSE=0.0916 bias=0.0054 p0=0.000
+estimator Q=0.01 W=16384 sample relRMSE=0.2171 bias=-0.0282 p0=0.000
+estimator Q=0.01 W=65536 syndrome_1d relRMSE=0.0575 bias=-0.0004 p0=0.000
+estimator Q=0.01 W=65536 syndrome_2d relRMSE=0.0493 bias=-0.0004 p0=0.000
+estimator Q=0.01 W=65536 sample relRMSE=0.1086 bias=0.0045 p0=0.000
+estimator Q=0.01 W=262144 syndrome_1d relRMSE=0.0270 bias=0.0001 p0=0.000
+estimator Q=0.01 W=262144 syndrome_2d relRMSE=0.0247 bias=0.0008 p0=0.000
+estimator Q=0.01 W=262144 sample relRMSE=0.0562 bias=0.0007 p0=0.000
+estimator Q=0.01 W=1048576 syndrome_1d relRMSE=0.0136 bias=0.0004 p0=0.000
+estimator Q=0.01 W=1048576 syndrome_2d relRMSE=0.0123 bias=0.0002 p0=0.000
+estimator Q=0.01 W=1048576 sample relRMSE=0.0267 bias=-0.0012 p0=0.000
+finite Q=0.002 cascade n=512 frac=0.0000 asym=0.9528228610375458
+finite Q=0.002 cascade n=65536 frac=0.6388 asym=0.9528228610375458
+finite Q=0.002 cascade n=1048576 frac=0.8079 asym=0.9528228610375458
+finite Q=0.002 cascade n=16777216 frac=0.8893 asym=0.9528228610375458
+finite Q=0.002 cascade n=67108864 frac=0.9105 asym=0.9528228610375458
+finite Q=0.002 lucid1d n=512 frac=0.0000 asym=0.4780797427514131
+finite Q=0.002 lucid1d n=65536 frac=0.2341 asym=0.4780797427514131
+finite Q=0.002 lucid1d n=1048576 frac=0.3628 asym=0.4780797427514131
+finite Q=0.002 lucid1d n=16777216 frac=0.4264 asym=0.4780797427514131
+finite Q=0.002 lucid1d n=67108864 frac=0.4452 asym=0.4780797427514131
+finite Q=0.002 lucid2d n=512 frac=0.0000 asym=0.9096336978295382
+finite Q=0.002 lucid2d n=65536 frac=0.5996 asym=0.9096336978295382
+finite Q=0.002 lucid2d n=1048576 frac=0.7667 asym=0.9096336978295382
+finite Q=0.002 lucid2d n=16777216 frac=0.8469 asym=0.9096336978295382
+finite Q=0.002 lucid2d n=67108864 frac=0.8681 asym=0.9096336978295382
+finite Q=0.002 ldpc n=512 frac=0.0000 asym=0.9267109530785613
+finite Q=0.002 ldpc n=65536 frac=0.6151 asym=0.9267109530785613
+finite Q=0.002 ldpc n=1048576 frac=0.7830 asym=0.9267109530785613
+finite Q=0.002 ldpc n=16777216 frac=0.8637 asym=0.9267109530785613
+finite Q=0.002 ldpc n=67108864 frac=0.8848 asym=0.9267109530785613
+finite Q=0.002 per_frame_512 n=512 frac=0.0000 asym=None
+finite Q=0.005 cascade n=512 frac=0.0000 asym=0.8957587085451121
+finite Q=0.005 cascade n=65536 frac=0.5975 asym=0.8957587085451121
+finite Q=0.005 cascade n=1048576 frac=0.7606 asym=0.8957587085451121
+finite Q=0.005 cascade n=16777216 frac=0.8377 asym=0.8957587085451121
+finite Q=0.005 cascade n=67108864 frac=0.8575 asym=0.8957587085451121
+finite Q=0.005 lucid1d n=512 frac=0.0000 asym=0.44387722355976067
+finite Q=0.005 lucid1d n=65536 frac=0.2145 asym=0.44387722355976067
+finite Q=0.005 lucid1d n=1048576 frac=0.3378 asym=0.44387722355976067
+finite Q=0.005 lucid1d n=16777216 frac=0.3974 asym=0.44387722355976067
+finite Q=0.005 lucid1d n=67108864 frac=0.4147 asym=0.44387722355976067
+finite Q=0.005 lucid2d n=512 frac=0.0000 asym=0.8125294147218699
+finite Q=0.005 lucid2d n=65536 frac=0.5219 asym=0.8125294147218699
+finite Q=0.005 lucid2d n=1048576 frac=0.6813 asym=0.8125294147218699
+finite Q=0.005 lucid2d n=16777216 frac=0.7561 asym=0.8125294147218699
+finite Q=0.005 lucid2d n=67108864 frac=0.7756 asym=0.8125294147218699
+finite Q=0.005 ldpc n=512 frac=0.0000 asym=0.8633224902833934
+finite Q=0.005 ldpc n=65536 frac=0.5680 asym=0.8633224902833934
+finite Q=0.005 ldpc n=1048576 frac=0.7297 asym=0.8633224902833934
+finite Q=0.005 ldpc n=16777216 frac=0.8059 asym=0.8633224902833934
+finite Q=0.005 ldpc n=67108864 frac=0.8254 asym=0.8633224902833934
+finite Q=0.005 per_frame_512 n=512 frac=0.0000 asym=None
+finite Q=0.01 cascade n=512 frac=0.0000 asym=0.8115777747486199
+finite Q=0.01 cascade n=65536 frac=0.5340 asym=0.8115777747486199
+finite Q=0.01 cascade n=1048576 frac=0.6883 asym=0.8115777747486199
+finite Q=0.01 cascade n=16777216 frac=0.7594 asym=0.8115777747486199
+finite Q=0.01 cascade n=67108864 frac=0.7774 asym=0.8115777747486199
+finite Q=0.01 lucid1d n=512 frac=0.0000 asym=0.6806227271411981
+finite Q=0.01 lucid1d n=65536 frac=0.4223 asym=0.6806227271411981
+finite Q=0.01 lucid1d n=1048576 frac=0.5642 asym=0.6806227271411981
+finite Q=0.01 lucid1d n=16777216 frac=0.6317 asym=0.6806227271411981
+finite Q=0.01 lucid1d n=67108864 frac=0.6494 asym=0.6806227271411981
+finite Q=0.01 lucid2d n=512 frac=0.0000 asym=0.642222420439538
+finite Q=0.01 lucid2d n=65536 frac=0.3897 asym=0.642222420439538
+finite Q=0.01 lucid2d n=1048576 frac=0.5270 asym=0.642222420439538
+finite Q=0.01 lucid2d n=16777216 frac=0.5934 asym=0.642222420439538
+finite Q=0.01 lucid2d n=67108864 frac=0.6110 asym=0.642222420439538
+finite Q=0.01 ldpc n=512 frac=0.0000 asym=0.7571890418384636
+finite Q=0.01 ldpc n=65536 frac=0.4855 asym=0.7571890418384636
+finite Q=0.01 ldpc n=1048576 frac=0.6365 asym=0.7571890418384636
+finite Q=0.01 ldpc n=16777216 frac=0.7061 asym=0.7571890418384636
+finite Q=0.01 ldpc n=67108864 frac=0.7237 asym=0.7571890418384636
+finite Q=0.01 per_frame_512 n=512 frac=0.0000 asym=None
+success N=4096 1x64 stall=False Q=0.0005 succ=0.9680 it=1.00
+success N=4096 1x64 stall=False Q=0.001 succ=0.8845 it=1.00
+success N=4096 1x64 stall=False Q=0.002 succ=0.6030 it=1.00
+success N=4096 1x64 stall=False Q=0.003 succ=0.3640 it=1.00
+success N=4096 1x64 stall=False Q=0.005 succ=0.0605 it=1.00
+success N=4096 1x64 stall=False Q=0.0075 succ=0.0025 it=1.00
+success N=4096 1x64 stall=False Q=0.01 succ=0.0000 it=1.00
+success N=4096 1x64 stall=False Q=0.015 succ=0.0000 it=1.00
+success N=4096 1x64 stall=False Q=0.02 succ=0.0000 it=1.00
+success N=4096 64x64 stall=False Q=0.0005 succ=1.0000 it=1.00
+success N=4096 64x64 stall=True Q=0.0005 succ=1.0000 it=1.00
+success N=4096 64x64 stall=False Q=0.001 succ=1.0000 it=1.00
+success N=4096 64x64 stall=True Q=0.001 succ=1.0000 it=1.00
+success N=4096 64x64 stall=False Q=0.002 succ=1.0000 it=1.01
+success N=4096 64x64 stall=True Q=0.002 succ=1.0000 it=1.01
+success N=4096 64x64 stall=False Q=0.003 succ=1.0000 it=1.03
+success N=4096 64x64 stall=True Q=0.003 succ=1.0000 it=1.04
+success N=4096 64x64 stall=False Q=0.005 succ=0.9975 it=1.20
+success N=4096 64x64 stall=True Q=0.005 succ=1.0000 it=1.22
+success N=4096 64x64 stall=False Q=0.0075 succ=0.9830 it=1.72
+success N=4096 64x64 stall=True Q=0.0075 succ=0.9990 it=1.84
+success N=4096 64x64 stall=False Q=0.01 succ=0.9005 it=2.66
+success N=4096 64x64 stall=True Q=0.01 succ=0.9860 it=2.93
+success N=4096 64x64 stall=False Q=0.015 succ=0.4630 it=5.69
+success N=4096 64x64 stall=True Q=0.015 succ=0.6660 it=11.04
+success N=4096 64x64 stall=False Q=0.02 succ=0.0495 it=7.80
+success N=4096 64x64 stall=True Q=0.02 succ=0.1135 it=21.96
+success N=16384 1x128 stall=False Q=0.0005 succ=0.7700 it=1.00
+success N=16384 1x128 stall=False Q=0.001 succ=0.3730 it=1.00
+success N=16384 1x128 stall=False Q=0.002 succ=0.0310 it=1.00
+success N=16384 1x128 stall=False Q=0.003 succ=0.0005 it=1.00
+success N=16384 1x128 stall=False Q=0.005 succ=0.0000 it=1.00
+success N=16384 1x128 stall=False Q=0.0075 succ=0.0000 it=1.00
+success N=16384 1x128 stall=False Q=0.01 succ=0.0000 it=1.00
+success N=16384 1x128 stall=False Q=0.015 succ=0.0000 it=1.00
+success N=16384 1x128 stall=False Q=0.02 succ=0.0000 it=1.00
+success N=16384 128x128 stall=False Q=0.0005 succ=1.0000 it=1.00
+success N=16384 128x128 stall=True Q=0.0005 succ=1.0000 it=1.00
+success N=16384 128x128 stall=False Q=0.001 succ=1.0000 it=1.01
+success N=16384 128x128 stall=True Q=0.001 succ=1.0000 it=1.01
+success N=16384 128x128 stall=False Q=0.002 succ=0.9995 it=1.17
+success N=16384 128x128 stall=True Q=0.002 succ=1.0000 it=1.19
+success N=16384 128x128 stall=False Q=0.003 succ=0.9920 it=1.62
+success N=16384 128x128 stall=True Q=0.003 succ=1.0000 it=1.65
+success N=16384 128x128 stall=False Q=0.005 succ=0.8940 it=3.03
+success N=16384 128x128 stall=True Q=0.005 succ=0.9760 it=3.55
+success N=16384 128x128 stall=False Q=0.0075 succ=0.3390 it=6.63
+success N=16384 128x128 stall=True Q=0.0075 succ=0.5145 it=14.55
+success N=16384 128x128 stall=False Q=0.01 succ=0.0105 it=7.97
+success N=16384 128x128 stall=True Q=0.01 succ=0.0215 it=23.66
+success N=16384 128x128 stall=False Q=0.015 succ=0.0000 it=8.00
+success N=16384 128x128 stall=True Q=0.015 succ=0.0000 it=24.00
+success N=16384 128x128 stall=False Q=0.02 succ=0.0000 it=8.00
+success N=16384 128x128 stall=True Q=0.02 succ=0.0000 it=24.00
+success N=65536 1x256 stall=False Q=0.0005 succ=0.1505 it=1.00
+success N=65536 1x256 stall=False Q=0.001 succ=0.0005 it=1.00
+success N=65536 1x256 stall=False Q=0.002 succ=0.0000 it=1.00
+success N=65536 1x256 stall=False Q=0.003 succ=0.0000 it=1.00
+success N=65536 1x256 stall=False Q=0.005 succ=0.0000 it=1.00
+success N=65536 1x256 stall=False Q=0.0075 succ=0.0000 it=1.00
+success N=65536 1x256 stall=False Q=0.01 succ=0.0000 it=1.00
+success N=65536 1x256 stall=False Q=0.015 succ=0.0000 it=1.00
+success N=65536 1x256 stall=False Q=0.02 succ=0.0000 it=1.00
+success N=65536 256x256 stall=False Q=0.0005 succ=1.0000 it=1.03
+success N=65536 256x256 stall=True Q=0.0005 succ=1.0000 it=1.03
+success N=65536 256x256 stall=False Q=0.001 succ=0.9980 it=1.34
+success N=65536 256x256 stall=True Q=0.001 succ=1.0000 it=1.34
+success N=65536 256x256 stall=False Q=0.002 succ=0.9655 it=2.45
+success N=65536 256x256 stall=True Q=0.002 succ=0.9955 it=2.65
+success N=65536 256x256 stall=False Q=0.003 succ=0.6970 it=5.04
+success N=65536 256x256 stall=True Q=0.003 succ=0.8610 it=7.48
+success N=65536 256x256 stall=False Q=0.005 succ=0.0000 it=8.00
+success N=65536 256x256 stall=True Q=0.005 succ=0.0000 it=24.00
+success N=65536 256x256 stall=False Q=0.0075 succ=0.0000 it=8.00
+success N=65536 256x256 stall=True Q=0.0075 succ=0.0000 it=24.00
+success N=65536 256x256 stall=False Q=0.01 succ=0.0000 it=8.00
+success N=65536 256x256 stall=True Q=0.01 succ=0.0000 it=24.00
+success N=65536 256x256 stall=False Q=0.015 succ=0.0000 it=8.00
+success N=65536 256x256 stall=True Q=0.015 succ=0.0000 it=24.00
+success N=65536 256x256 stall=False Q=0.02 succ=0.0000 it=8.00
+success N=65536 256x256 stall=True Q=0.02 succ=0.0000 it=24.00

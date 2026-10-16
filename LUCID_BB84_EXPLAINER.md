@@ -15,6 +15,8 @@
 >
 > **Simulation scripts** behind the numbers in Parts 14–16 are in [`lucid_contribution_sims/`](lucid_contribution_sims/).
 
+> **Update: final results in the paper.** The numbers in Parts 14–16 come from a quick early simulation. The full study in [`paper/`](paper/) supersedes them. It uses one simulator for all schemes, matched frame sizes and block-level accounting for every scheme, and adds stall resolution and a second-syndrome fallback. At equal frame size, LUCID-2D reaches 94–98% of the secret fraction of a belief-propagation LDPC decoder at 0.1–0.5% QBER, in about one round trip, and 27–32× Cascade's round-trip-limited throughput. Its advantage is decoder simplicity, not key rate: LDPC stays ahead, clearly so from 1% QBER. The earlier statement that LUCID-2D "beats every scheme in Table V" compared different frame sizes and should not be quoted.
+
 ---
 
 ## Table of Contents

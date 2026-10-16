@@ -1,0 +1,12 @@
+# LaTeX build products
+*.aux
+*.log
+*.blg
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+# simulation/RTL scratch
+rtl/work_*/
+rtl/synth/*.json
+__pycache__/

@@ -1,0 +1,20 @@
+
+4. Printing statistics.
+
+=== lucid2d_dec ===
+
+   Number of wires:               3664
+   Number of wire bits:           5603
+   Number of public wires:        3664
+   Number of public wire bits:    5603
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               3847
+     CCU2C                           4
+     L6MUX21                       634
+     LUT4                         2004
+     PFUMX                         970
+     TRELLIS_DPR16X4               192
+     TRELLIS_FF                     43
+

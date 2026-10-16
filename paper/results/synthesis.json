@@ -1,0 +1,19 @@
+{
+ "tool": "Yosys 0.33; nextpnr-ecp5 (LFE5U-25F, CABGA256, seed 1); nextpnr-ice40 (HX8K, CT256, seed 1)",
+ "verification": "RTL vs Python syndrome-domain model, Icarus Verilog 12: 0 mismatches over 520 tiles (16x32, 32x16, 64x64, 128x128, 256x256, 64x128) in flips, convergence, scan and cycle counts",
+ "xc7_synth_only": {
+  "64x128":  {"LUT_logic": 105, "RAM64M": 18, "FF": 38},
+  "128x128": {"LUT_logic": 118, "RAM64M": 24, "FF": 39},
+  "256x256": {"LUT_logic": 143, "RAM64M": 48, "FF": 43}
+ },
+ "ecp5_25k_post_route": {
+  "64x128":  {"LUT4": 562, "DPR16X4": 48, "FF": 38, "COMB_used": 864, "fmax_MHz": 84.03},
+  "128x128": {"LUT4": 536, "DPR16X4": 64, "FF": 39, "COMB_used": 934, "fmax_MHz": 76.16},
+  "256x256": {"LUT4": 2004, "DPR16X4": 192, "FF": 43, "COMB_used": 3170, "fmax_MHz": 61.06}
+ },
+ "ice40_hx8k_post_route": {
+  "64x128":  {"LC": 3953, "fmax_MHz": 37.78, "note": "no distributed RAM; syndromes in flip-flops"},
+  "128x128": {"LC": 5795, "fmax_MHz": 37.50},
+  "256x256": {"LC": 12844, "note": "does not fit HX8K"}
+ }
+}
