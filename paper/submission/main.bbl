@@ -31,13 +31,6 @@ V.~Scarani, H.~Bechmann-Pasquinucci, N.~J. Cerf, M.~Du\v{s}ek,
   N.~L\"{u}tkenhaus, and M.~Peev, ``The security of practical quantum key
   distribution,'' \emph{Rev. Mod. Phys.}, vol.~81, no.~3, pp. 1301--1350, 2009.
 
-\bibitem{pirandola2020}
-S.~Pirandola, U.~L. Andersen, L.~Banchi, M.~Berta, D.~Bunandar, R.~Colbeck,
-  D.~Englund, T.~Gehring, C.~Lupo, C.~Ottaviani, J.~L. Pereira, M.~Razavi,
-  J.~S. Shaari, M.~Tomamichel, V.~C. Usenko, G.~Vallone, P.~Villoresi, and
-  P.~Wallden, ``Advances in quantum cryptography,'' \emph{Adv. Opt. Photon.},
-  vol.~12, no.~4, pp. 1012--1236, 2020.
-
 \bibitem{cascade}
 G.~Brassard and L.~Salvail, ``Secret-key reconciliation by public discussion,''
   in \emph{Advances in Cryptology---{EUROCRYPT} '93}, ser. Lecture Notes in
@@ -64,10 +57,6 @@ D.~Elkouss, J.~Martinez-Mateo, and V.~Martin, ``Information reconciliation for
   quantum key distribution,'' \emph{Quantum Inf. Comput.}, vol.~11, no. 3--4,
   pp. 226--238, 2011.
 
-\bibitem{mackay1999}
-D.~J.~C. MacKay, ``Good error-correcting codes based on very sparse matrices,''
-  \emph{IEEE Trans. Inf. Theory}, vol.~45, no.~2, pp. 399--431, 1999.
-
 \bibitem{kschischang2001}
 F.~R. Kschischang, B.~J. Frey, and H.-A. Loeliger, ``Factor graphs and the
   sum-product algorithm,'' \emph{IEEE Trans. Inf. Theory}, vol.~47, no.~2, pp.
@@ -76,15 +65,6 @@ F.~R. Kschischang, B.~J. Frey, and H.-A. Loeliger, ``Factor graphs and the
 \bibitem{hamming1950}
 R.~W. Hamming, ``Error detecting and error correcting codes,'' \emph{Bell Syst.
   Tech. J.}, vol.~29, no.~2, pp. 147--160, 1950.
-
-\bibitem{tomamichel2012}
-M.~Tomamichel, C.~C.~W. Lim, N.~Gisin, and R.~Renner, ``Tight finite-key
-  analysis for quantum cryptography,'' \emph{Nat. Commun.}, vol.~3, no. 1, Art.
-  no. 634, 2012.
-
-\bibitem{carterwegman1979}
-J.~L. Carter and M.~N. Wegman, ``Universal classes of hash functions,''
-  \emph{J. Comput. Syst. Sci.}, vol.~18, no.~2, pp. 143--154, 1979.
 
 \bibitem{krawczyk1994}
 H.~Krawczyk, ``{LFSR}-based hashing and authentication,'' in \emph{Advances in
@@ -97,14 +77,15 @@ C.~H. Bennett, G.~Brassard, C.~Cr{\'e}peau, and U.~M. Maurer, ``Generalized
   privacy amplification,'' \emph{IEEE Trans. Inf. Theory}, vol.~41, no.~6, pp.
   1915--1923, 1995.
 
-\bibitem{renner2008}
-R.~Renner, ``Security of quantum key distribution,'' \emph{Int. J. Quantum
-  Inf.}, vol.~6, no.~1, pp. 1--127, 2008.
-
 \bibitem{shorpreskill2000}
 P.~W. Shor and J.~Preskill, ``Simple proof of security of the {BB84} quantum
   key distribution protocol,'' \emph{Phys. Rev. Lett.}, vol.~85, no.~2, pp.
   441--444, 2000.
+
+\bibitem{tomamichel2012}
+M.~Tomamichel, C.~C.~W. Lim, N.~Gisin, and R.~Renner, ``Tight finite-key
+  analysis for quantum cryptography,'' \emph{Nat. Commun.}, vol.~3, no. 1, Art.
+  no. 634, 2012.
 
 \bibitem{lim2014}
 C.~C.~W. Lim, M.~Curty, N.~Walenta, F.~Xu, and H.~Zbinden, ``Concise security
@@ -121,20 +102,11 @@ W.~T. Buttler, S.~K. Lamoreaux, J.~R. Torgerson, G.~H. Nickel, C.~H. Donahue,
   and C.~G. Peterson, ``Fast, efficient error reconciliation for quantum
   cryptography,'' \emph{Phys. Rev. A}, vol.~67, no. 5, Art. no. 052303, 2003.
 
-\bibitem{blind2012}
-J.~Martinez-Mateo, D.~Elkouss, and V.~Martin, ``Blind reconciliation,''
-  \emph{Quantum Inf. Comput.}, vol.~12, no. 9--10, pp. 791--812, 2012.
-
 \bibitem{kiktenko2017}
 E.~O. Kiktenko, A.~S. Trushechkin, C.~C.~W. Lim, Y.~V. Kurochkin, and A.~K.
   Fedorov, ``Symmetric blind information reconciliation for quantum key
   distribution,'' \emph{Phys. Rev. Appl.}, vol.~8, no. 4, Art. no. 044017,
   2017.
-
-\bibitem{dixon2014}
-A.~R. Dixon and H.~Sato, ``High speed and adaptable error correction for
-  megabit/s rate quantum key distribution,'' \emph{Sci. Rep.}, vol.~4, no. 1,
-  Art. no. 7275, 2014.
 
 \bibitem{mao2019}
 H.~Mao, Q.~Li, Q.~Han, and H.~Guo, ``High-throughput and low-cost {LDPC}
@@ -147,12 +119,6 @@ E.~O. Kiktenko, A.~O. Malyshev, A.~A. Bozhedarov, N.~O. Pozhar, M.~N. Anufriev,
   of quantum key distribution,'' \emph{J. Russ. Laser Res.}, vol.~39, no.~6,
   pp. 558--567, 2018.
 
-\bibitem{tomamichel2017}
-M.~Tomamichel, J.~Martinez-Mateo, C.~Pacher, and D.~Elkouss, ``Fundamental
-  finite key limits for one-way information reconciliation in quantum key
-  distribution,'' \emph{Quantum Inf. Process.}, vol.~16, no. 11, Art. no. 280,
-  2017.
-
 \bibitem{elias1954}
 P.~Elias, ``Error-free coding,'' \emph{Trans. IRE Prof. Group Inf. Theory},
   vol.~4, no.~4, pp. 29--37, 1954.
@@ -160,11 +126,6 @@ P.~Elias, ``Error-free coding,'' \emph{Trans. IRE Prof. Group Inf. Theory},
 \bibitem{pyndiah1998}
 R.~M. Pyndiah, ``Near-optimum decoding of product codes: {B}lock turbo codes,''
   \emph{IEEE Trans. Commun.}, vol.~46, no.~8, pp. 1003--1010, 1998.
-
-\bibitem{justesen2011}
-J.~Justesen, ``Performance of product codes and related structures with
-  iterated decoding,'' \emph{IEEE Trans. Commun.}, vol.~59, no.~2, pp.
-  407--415, 2011.
 
 \bibitem{smith2012}
 B.~P. Smith, A.~Farhood, A.~Hunt, F.~R. Kschischang, and J.~Lodge, ``Staircase
@@ -203,12 +164,6 @@ R.~J. Serfling, ``Probability inequalities for the sum in sampling without
 M.~N. Wegman and J.~L. Carter, ``New hash functions and their use in
   authentication and set equality,'' \emph{J. Comput. Syst. Sci.}, vol.~22,
   no.~3, pp. 265--279, 1981.
-
-\bibitem{icarus}
-\BIBentryALTinterwordspacing
-S.~Williams. Icarus {Verilog}. Accessed: Oct. 16, 2026. [Online]. Available:
-  \url{https://steveicarus.github.io/iverilog/}
-\BIBentrySTDinterwordspacing
 
 \bibitem{shah2019}
 D.~Shah, E.~Hung, C.~Wolf, S.~Bazanski, D.~Gisselquist, and M.~Milanovic,

@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
-# Build main.pdf (run from the paper directory).
+# Build the 6-page paper (main.pdf) and the 8-page extended copy
+# (main_8page.pdf), then the flattened single-file submission copies.
 set -euo pipefail
 cd "$(dirname "$0")"
-pdflatex -interaction=nonstopmode -halt-on-error main.tex > /dev/null
-bibtex main > /dev/null
-pdflatex -interaction=nonstopmode -halt-on-error main.tex > /dev/null
-pdflatex -interaction=nonstopmode -halt-on-error main.tex > /dev/null
-echo "built $(pdfinfo main.pdf | awk '/Pages/{print $2}') pages"
+for doc in main main_8page; do
+  pdflatex -interaction=nonstopmode -halt-on-error "$doc.tex" > /dev/null
+  bibtex "$doc" > /dev/null
+  pdflatex -interaction=nonstopmode -halt-on-error "$doc.tex" > /dev/null
+  pdflatex -interaction=nonstopmode -halt-on-error "$doc.tex" > /dev/null
+  echo "built $doc.pdf: $(pdfinfo "$doc.pdf" | awk '/Pages/{print $2}') pages"
+done
 python3 flatten.py
-(cd submission && pdflatex -interaction=nonstopmode -halt-on-error main.tex > /dev/null && pdflatex -interaction=nonstopmode -halt-on-error main.tex > /dev/null && rm -f main.aux main.log main.out && echo "submission copy compiles")
+(cd submission && for doc in main main_8page; do
+   pdflatex -interaction=nonstopmode -halt-on-error "$doc.tex" > /dev/null
+   pdflatex -interaction=nonstopmode -halt-on-error "$doc.tex" > /dev/null
+ done && rm -f ./*.aux ./*.log ./*.out && echo "submission copies compile")
