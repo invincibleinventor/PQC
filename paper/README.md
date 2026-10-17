@@ -19,6 +19,7 @@ The merged paper combines:
 |---|---|
 | `main.tex` / `main.pdf` | 6-page conference version (`IEEEtran` v1.8b, `conference` option) |
 | `main_8page.tex` / `main_8page.pdf` | 8-page extended version (adds the worked example, ablation and burst tables, and the estimator and finite-key figures) |
+| `main_plagcheck.tex` / `main_plagcheck.pdf` | 6-page text for similarity checking (e.g. Turnitin): no citations, no reference list, no graphics; figure captions and tables kept as text. Regenerate with `python3 make_plagcheck.py` |
 | `refs.bib` | References; metadata checked against Crossref |
 | `figures/` | Vector figures produced by `sim/make_figures.py` |
 | `tables/` | Table rows produced by `sim/make_tables.py`; `numbers.txt` lists every value quoted in the text |
